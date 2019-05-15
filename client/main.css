@@ -82,10 +82,12 @@ li {
   list-style: none;
   padding: 15px;
   border-bottom: #eee solid 1px;
+  min-height: 20px;
 }
 
 li .text {
   margin-left: 10px;
+  text-overflow: clip;
 }
 
 li.checked {
