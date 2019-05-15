@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-  max-width: 25%;
+  max-width: 200px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
@@ -83,11 +83,14 @@ li {
   padding: 15px;
   border-bottom: #eee solid 1px;
   min-height: 20px;
+
 }
 
 li .text {
   margin-left: 10px;
-  text-overflow: clip;
+  width: 150px;
+  word-wrap: break-word;
+
 }
 
 li.checked {
