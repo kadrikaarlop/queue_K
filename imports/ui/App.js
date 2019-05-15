@@ -74,6 +74,10 @@ class App extends Component {
 
                     <AccountsUIWrapper />
 
+                    <ul>
+                        {this.renderTasks()}
+                    </ul>
+
                     { this.props.currentUser ?
                         <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
                             <input
@@ -85,9 +89,6 @@ class App extends Component {
                     }
                 </header>
 
-                <ul>
-                    {this.renderTasks()}
-                </ul>
             </div>
         );
     }
@@ -97,7 +98,7 @@ export default withTracker(() => {
     Meteor.subscribe('tasks');
 
     return {
-        tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+        tasks: Tasks.find({}, { sort: { createdAt: +1 } }).fetch(),
         incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
         currentUser: Meteor.user(),
     };
